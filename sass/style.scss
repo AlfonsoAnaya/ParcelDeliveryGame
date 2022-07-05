@@ -1,0 +1,20 @@
+body * {
+    margin: 0 auto;
+    text-align: center;
+}
+
+#grid-container {
+    width: 400px;
+    height: 400px;
+    background: rgb(204, 224, 231);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    .square {
+        width: 80px;
+        height: 80px;
+        border: solid coral;
+        margin: 1px;
+    }
+}
