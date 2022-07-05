@@ -1,20 +1,43 @@
 body * {
   margin: 0 auto;
   text-align: center;
+  font-family: "Signika", sans-serif;
+  color: rgb(14, 14, 14);
+}
+
+header {
+  font-family: "Fredoka One", sans-serif;
+}
+
+.scoreboard {
+  margin-bottom: 2em;
 }
 
 #grid-container {
-  width: 400px;
-  height: 400px;
-  background: rgb(204, 224, 231);
+  width: 338px;
+  padding: 1em;
+  gap: 2px;
+  background: rgb(222, 234, 238);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: flex-start;
+  border-radius: 0.5em;
 }
 #grid-container .square {
-  width: 80px;
-  height: 80px;
-  border: solid coral;
-  margin: 1px;
+  width: 83px;
+  height: 83px;
+  background: rgb(197, 141, 141);
+  display: flex;
+  align-items: center;
+}
+#grid-container .square .building {
+  width: 35%;
+  height: 50%;
+  background: gray;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+#grid-container .square-empty {
+  background: rgb(144, 173, 144);
 }/*# sourceMappingURL=style.css.map */

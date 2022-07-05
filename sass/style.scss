@@ -1,20 +1,51 @@
+$color-primary: rgb(222, 234, 238);
+$color-text: rgb(14, 14, 14);
+$color-empty: rgb(144, 173, 144);
+$color-valid: rgb(197, 141, 141);
+$color-building: gray;
+$font-headers: 'Fredoka One', sans-serif;
+$font-text: 'Signika', sans-serif;
+
 body * {
     margin: 0 auto;
     text-align: center;
+    font-family: $font-text;
+    color: $color-text;
+}
+
+header {
+    font-family: $font-headers;
+}
+
+.scoreboard {
+    margin-bottom: 2em;
 }
 
 #grid-container {
-    width: 400px;
-    height: 400px;
-    background: rgb(204, 224, 231);
+    width: 338px;
+    padding: 1em;
+    gap:2px;
+    background: $color-primary;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
+    border-radius: .5em;
     .square {
-        width: 80px;
-        height: 80px;
-        border: solid coral;
-        margin: 1px;
+        width: 83px;
+        height: 83px;
+        background: $color-valid;
+        display: flex;
+        align-items: center;
+        .building {
+            width: 35%;
+            height: 50%;
+            background: $color-building;
+            border-top-left-radius: 1em;
+            border-top-right-radius: 1em;
+        }
+    }
+    .square-empty {
+        background: $color-empty;
     }
 }
