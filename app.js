@@ -1,5 +1,6 @@
 let gridWidth = 4;
 let squareGridWidth = 3;
+let parcelNumber = 5;
 let gridContainer = document.getElementById("grid-container");
 let emptySquares = [0,2,7,15];
 let validSquares = [1,3,4,5,6,8,9,10,11,12,13,14];
@@ -13,15 +14,23 @@ let southEastRoad = [1,6];
 let northWestRoad = [6,11];
 let southWestRoad = [3];
 let northEastRoad = [6];
+let randomSquares = []
 
+for (let i=0; i<parcelNumber; i++) {
+    let randomSquare = Math.floor(Math.random() * buildingSquares.length);
+    randomSquares.push(buildingSquares[randomSquare])
+}
+//create grid
 for (let i = 0; i < gridWidth * gridWidth; i++) {
+    //create individual squares (including empty ones)
     const square = document.createElement("div");
     square.setAttribute("id", i);
-    square.classList.add("square")
+    square.classList.add("square");
     gridContainer.appendChild(square);
     if (emptySquares.includes(i)) {
         square.classList.add("square-empty")
     }
+    // create roads and buildings
     if (validSquares.includes(i)) {
         for (let j = 0; j < 9; j++) {
             const roadBlock = document.createElement("div");
@@ -60,5 +69,11 @@ for (let i = 0; i < gridWidth * gridWidth; i++) {
             }
         }
     }
+    // create parcles using randomSquares array
+    if (randomSquares.includes(i)) {
+        square.classList.add("parcel")
+    }
 }
+
+
 

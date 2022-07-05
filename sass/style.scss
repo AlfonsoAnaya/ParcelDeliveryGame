@@ -1,6 +1,6 @@
 $color-primary: rgb(222, 234, 238);
 $color-text: rgb(14, 14, 14);
-$color-empty: rgb(69, 85, 69);
+$color-empty: rgb(99, 116, 99);
 $color-valid: rgb(210, 192, 181);
 $color-road: gray;
 $font-headers: 'Fredoka One', sans-serif;
@@ -19,12 +19,18 @@ header {
 
 .scoreboard {
     margin-bottom: 2em;
+    display: flex;
+    max-width: 400px;
+}
+
+.scoreboard span {
+    width: 50%;
 }
 
 #grid-container {
     width: 410px;
     padding: 1em;
-    gap:2px;
+    
     background: $color-primary;
     display: flex;
     flex-wrap: wrap;
@@ -39,8 +45,8 @@ header {
         flex-wrap: wrap;
         align-items: center;
         .road-block {
-            width: 33%;
-            height: 33%;
+            width: calc(100%/3);
+            height: calc(100%/3);
             box-sizing: border-box;
         }
         .e-road,
@@ -57,13 +63,13 @@ header {
         .e-road,
         .w-road {
             
-            border-top: .6em solid $color-valid;
-            border-bottom: .6em solid $color-valid;
+            border-top: 11px solid $color-valid;
+            border-bottom: 11px solid $color-valid;
         }
         .n-road,
         .s-road {
-            border-left: .6em solid $color-valid;
-            border-right: .6em solid $color-valid;
+            border-left: 11px solid $color-valid;
+            border-right: 11px solid $color-valid;
         }
         .se-road,
         .nw-road {
@@ -83,4 +89,8 @@ header {
     .square-empty {
         background: $color-empty;
     }
+}
+
+.parcel {
+    opacity: .5;
 }
