@@ -28,9 +28,8 @@ header {
 }
 
 #grid-container {
-    width: 410px;
+    width: 400px;
     padding: 1em;
-    
     background: $color-primary;
     display: flex;
     flex-wrap: wrap;
@@ -41,53 +40,15 @@ header {
         width: 100px;
         height: 100px;
         background: $color-valid;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        .road-block {
-            width: calc(100%/3);
-            height: calc(100%/3);
-            box-sizing: border-box;
-        }
-        .e-road,
-        .w-road,
-        .n-road,
-        .s-road,
-        .se-road,
-        .nw-road,
-        .sw-road,
-        .ne-road {
-            background: $color-road;
-        }
-
-        .e-road,
-        .w-road {
-            
-            border-top: 11px solid $color-valid;
-            border-bottom: 11px solid $color-valid;
-        }
-        .n-road,
-        .s-road {
-            border-left: 11px solid $color-valid;
-            border-right: 11px solid $color-valid;
-        }
-        .se-road,
-        .nw-road {
-            clip-path: polygon(0 0, 25% 0, 100% 75%, 100% 100%, 75% 100%, 0 25%);
-        }
-        .sw-road,
-        .ne-road {
-            clip-path: polygon(75% 0, 100% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
-
-        }
-        .building {
-            background: $color-text;
-            border-top-left-radius: 1em;
-            border-top-right-radius: 1em;
-        }
+        border: 1px solid $color-primary;
+        box-sizing: border-box;
     }
-    .square-empty {
+    .empty {
+        width: 100px;
+        height: 100px;
         background: $color-empty;
+        border: 1px solid $color-primary;
+        box-sizing: border-box;
     }
 }
 

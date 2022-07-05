@@ -20,7 +20,7 @@ header {
 }
 
 #grid-container {
-  width: 410px;
+  width: 400px;
   padding: 1em;
   background: rgb(222, 234, 238);
   display: flex;
@@ -33,52 +33,15 @@ header {
   width: 100px;
   height: 100px;
   background: rgb(210, 192, 181);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-#grid-container .square .road-block {
-  width: 33.3333333333%;
-  height: 33.3333333333%;
+  border: 1px solid rgb(222, 234, 238);
   box-sizing: border-box;
 }
-#grid-container .square .e-road,
-#grid-container .square .w-road,
-#grid-container .square .n-road,
-#grid-container .square .s-road,
-#grid-container .square .se-road,
-#grid-container .square .nw-road,
-#grid-container .square .sw-road,
-#grid-container .square .ne-road {
-  background: gray;
-}
-#grid-container .square .e-road,
-#grid-container .square .w-road {
-  border-top: 11px solid rgb(210, 192, 181);
-  border-bottom: 11px solid rgb(210, 192, 181);
-}
-#grid-container .square .n-road,
-#grid-container .square .s-road {
-  border-left: 11px solid rgb(210, 192, 181);
-  border-right: 11px solid rgb(210, 192, 181);
-}
-#grid-container .square .se-road,
-#grid-container .square .nw-road {
-  -webkit-clip-path: polygon(0 0, 25% 0, 100% 75%, 100% 100%, 75% 100%, 0 25%);
-          clip-path: polygon(0 0, 25% 0, 100% 75%, 100% 100%, 75% 100%, 0 25%);
-}
-#grid-container .square .sw-road,
-#grid-container .square .ne-road {
-  -webkit-clip-path: polygon(75% 0, 100% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
-          clip-path: polygon(75% 0, 100% 0, 100% 25%, 25% 100%, 0 100%, 0 75%);
-}
-#grid-container .square .building {
-  background: rgb(14, 14, 14);
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
-}
-#grid-container .square-empty {
+#grid-container .empty {
+  width: 100px;
+  height: 100px;
   background: rgb(99, 116, 99);
+  border: 1px solid rgb(222, 234, 238);
+  box-sizing: border-box;
 }
 
 .parcel {
