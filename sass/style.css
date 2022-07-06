@@ -40,7 +40,6 @@ header {
   width: 100px;
   height: 100px;
   background: rgb(99, 116, 99);
-  border: 1px solid rgb(222, 234, 238);
   box-sizing: border-box;
 }
 #grid-container .parcel {

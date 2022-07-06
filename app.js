@@ -1,9 +1,11 @@
 let gridWidth = 4;
 let parcelNumber = 3;
 let invalidAmount = 3;
+let energy = 3;
 let gridContainer = document.getElementById("grid-container");
 let squares = [];
-let validSquares = []
+let validSquares = [];
+
 
 
 /*for (let i=0; i<parcelNumber; i++) {
@@ -40,16 +42,40 @@ function createParcel() {
     let validParcelSquares = squares.filter(s => s.classList.contains("square-valid")).filter(s=> !s.classList.contains("current"));
     const randomNumParcel = Math.floor(Math.random() * validParcelSquares.length);
     validParcelSquares[randomNumParcel].classList.add("parcel");
-    const randomNumDestination = Math.floor(Math.random() * validParcelSquares.length);
-    validParcelSquares[randomNumDestination].classList.add("destination");
 }
 
 function move(newSquare) {
+    //display new position
     currentSquare = validSquares.find(s=>s.classList.contains("current"));
     console.log(currentSquare);
     currentSquare.classList.remove("current");
     newSquare.classList.add("current");
-
+    //if new position contains a parcel
+    if (newSquare.classList.contains("parcel")) {
+        energy++;
+        newSquare.classList.remove("parcel");
+        let validParcelSquares = squares.filter(s => s.classList.contains("square-valid")).filter(s=> !s.classList.contains("current"));
+        const randomNumDestination = Math.floor(Math.random() * validParcelSquares.length);
+        validParcelSquares[randomNumDestination].classList.add("destination");
+    }
+    // if new position is a destination
+    if  (newSquare.classList.contains("destination")) {
+        energy = energy + 2;
+        newSquare.classList.remove("destination")
+    }
+    //consume energy and, with a probability of .5, create a new parcel
+    energy--;
+    console.log(energy)
+    if (energy < 3) {
+        createParcel();
+    } else if (Math.random() > .8) {
+        createParcel();
+    }
+    if (energy === 0) {
+        alert("you'redead :(")
+    }
 }
+
+
 
 createBoard()
