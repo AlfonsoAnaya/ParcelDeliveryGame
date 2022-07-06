@@ -39,7 +39,9 @@ function createBoard() {
 }
 
 function createParcel() {
-    let validParcelSquares = squares.filter(s => s.classList.contains("square-valid")).filter(s=> !s.classList.contains("current"));
+    let validParcelSquares = squares.filter(s => s.classList.contains("square-valid"))
+    .filter(s=> !s.classList.contains("current"))
+    .filter(s=> !s.classList.contains("parcel"));
     const randomNumParcel = Math.floor(Math.random() * validParcelSquares.length);
     validParcelSquares[randomNumParcel].classList.add("parcel");
 }
@@ -47,16 +49,17 @@ function createParcel() {
 function move(newSquare) {
     //display new position
     currentSquare = validSquares.find(s=>s.classList.contains("current"));
-    console.log(currentSquare);
     currentSquare.classList.remove("current");
     newSquare.classList.add("current");
     //if new position contains a parcel
     if (newSquare.classList.contains("parcel")) {
         energy++;
         newSquare.classList.remove("parcel");
-        let validParcelSquares = squares.filter(s => s.classList.contains("square-valid")).filter(s=> !s.classList.contains("current"));
-        const randomNumDestination = Math.floor(Math.random() * validParcelSquares.length);
-        validParcelSquares[randomNumDestination].classList.add("destination");
+        let validDestinationSquares = squares.filter(s => s.classList.contains("square-valid"))
+        .filter(s=> !s.classList.contains("current"))
+        .filter(s=> !s.classList.contains("destination"));
+        const randomNumDestination = Math.floor(Math.random() * validDestinationSquares.length);
+        validDestinationSquares[randomNumDestination].classList.add("destination");
     }
     // if new position is a destination
     if  (newSquare.classList.contains("destination")) {
