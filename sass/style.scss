@@ -28,7 +28,7 @@ header {
 }
 
 #grid-container {
-    width: 400px;
+    width: 406px;
     padding: 1em;
     background: $color-primary;
     display: flex;
@@ -36,19 +36,28 @@ header {
     justify-content: center;
     align-content: flex-start;
     border-radius: .5em;
-    .square {
+    gap: 2px;
+    .square-valid {
         width: 100px;
         height: 100px;
         background: $color-valid;
-        border: 1px solid $color-primary;
         box-sizing: border-box;
     }
-    .empty {
+    .square-empty {
         width: 100px;
         height: 100px;
         background: $color-empty;
         border: 1px solid $color-primary;
         box-sizing: border-box;
+    }
+    .parcel {
+        background: red;
+    }
+    .destination {
+        border: solid 3px coral;
+    }
+    .current {
+        background: blue;
     }
 }
 

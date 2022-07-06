@@ -20,7 +20,7 @@ header {
 }
 
 #grid-container {
-  width: 400px;
+  width: 406px;
   padding: 1em;
   background: rgb(222, 234, 238);
   display: flex;
@@ -28,20 +28,29 @@ header {
   justify-content: center;
   align-content: flex-start;
   border-radius: 0.5em;
+  gap: 2px;
 }
-#grid-container .square {
+#grid-container .square-valid {
   width: 100px;
   height: 100px;
   background: rgb(210, 192, 181);
-  border: 1px solid rgb(222, 234, 238);
   box-sizing: border-box;
 }
-#grid-container .empty {
+#grid-container .square-empty {
   width: 100px;
   height: 100px;
   background: rgb(99, 116, 99);
   border: 1px solid rgb(222, 234, 238);
   box-sizing: border-box;
+}
+#grid-container .parcel {
+  background: red;
+}
+#grid-container .destination {
+  border: solid 3px coral;
+}
+#grid-container .current {
+  background: blue;
 }
 
 .parcel {
