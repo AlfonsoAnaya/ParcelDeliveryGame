@@ -50,16 +50,15 @@ header {
         box-sizing: border-box;
     }
     .parcel {
-        background: red;
+        background: rgb(215, 111, 60);
+        border: solid 25px $color-valid;
     }
     .destination {
         border: solid 3px coral;
     }
     .current {
-        background: blue;
+        background: rgb(52, 147, 230);
+        border: solid 35px $color-valid;
     }
 }
 
-.parcel {
-    opacity: .5;
-}

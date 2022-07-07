@@ -1,5 +1,5 @@
 let gridWidth = 4;
-let parcelNumber = 3;
+let initialparcelNumber = 2;
 let invalidAmount = 3;
 let energy = 3;
 let gridContainer = document.getElementById("grid-container");
@@ -19,6 +19,7 @@ function createBoard() {
     const validArray = Array(gridWidth * gridWidth - invalidAmount).fill("square-valid");
     const gameArray = validArray.concat(invalidArray);
     const shuffledArray = gameArray.sort(() => Math.random() -.5);
+    
     //create individual squares (including empty ones)
     for (let i = 0; i < gridWidth * gridWidth; i++) {
         const square = document.createElement("div");
@@ -30,10 +31,12 @@ function createBoard() {
     //create starting point 
     validSquares = squares.filter(s => s.classList.contains("square-valid"));
     validSquares[Math.floor(Math.random() * validSquares.length)].classList.add("current");
+
     //create parcels
-    for (let i = 0; i < parcelNumber; i++) {
+    for (let i = 0; i < initialparcelNumber; i++) {
         createParcel()
     }
+
     //addEventListeners to move
     validSquares.forEach(s => s.addEventListener("click", ()=>move(s)))
 }
@@ -69,7 +72,7 @@ function move(newSquare) {
     //consume energy and, with a probability of .5, create a new parcel
     energy--;
     console.log(energy)
-    if (energy < 3) {
+    if (energy < 2) {
         createParcel();
     } else if (Math.random() > .8) {
         createParcel();

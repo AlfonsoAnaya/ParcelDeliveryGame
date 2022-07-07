@@ -43,15 +43,13 @@ header {
   box-sizing: border-box;
 }
 #grid-container .parcel {
-  background: red;
+  background: rgb(215, 111, 60);
+  border: solid 25px rgb(210, 192, 181);
 }
 #grid-container .destination {
   border: solid 3px coral;
 }
 #grid-container .current {
-  background: blue;
-}
-
-.parcel {
-  opacity: 0.5;
+  background: rgb(52, 147, 230);
+  border: solid 35px rgb(210, 192, 181);
 }/*# sourceMappingURL=style.css.map */
