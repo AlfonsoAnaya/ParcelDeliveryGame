@@ -1,8 +1,7 @@
 $color-primary: rgb(222, 234, 238);
 $color-text: rgb(14, 14, 14);
-$color-empty: rgb(99, 116, 99);
+$color-empty: gray;
 $color-valid: rgb(210, 192, 181);
-$color-road: gray;
 $font-headers: 'Fredoka One', sans-serif;
 $font-text: 'Signika', sans-serif;
 
@@ -54,7 +53,7 @@ header {
         border: solid 25px $color-valid;
     }
     .destination {
-        border: solid 3px coral;
+        border: solid 25px coral;
     }
     .current {
         background: rgb(52, 147, 230);

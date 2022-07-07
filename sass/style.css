@@ -39,7 +39,7 @@ header {
 #grid-container .square-empty {
   width: 100px;
   height: 100px;
-  background: rgb(99, 116, 99);
+  background: gray;
   box-sizing: border-box;
 }
 #grid-container .parcel {
@@ -47,7 +47,7 @@ header {
   border: solid 25px rgb(210, 192, 181);
 }
 #grid-container .destination {
-  border: solid 3px coral;
+  border: solid 25px coral;
 }
 #grid-container .current {
   background: rgb(52, 147, 230);
