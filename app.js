@@ -56,17 +56,37 @@ function createParcel() {
 function accessible(newSquare) {
     //check NW corner
     id = newSquare.id
-    if (id == 0) {
-        console.log(typeof(id));
-        console.log(typeof(currentId));
-        if(currentId == id+1 || currentId == id + gridWidth || currentId == gridWidth +1) {
-            console.log("i'mchanging a value :3")
+    if (parseInt(id) === 0) {
+        if(parseInt(currentId) === parseInt(id+1) 
+        || parseInt(currentId) ===  gridWidth 
+        || parseInt(currentId) === gridWidth +1) {
             isNewSquareAccessible = true;
         }
     }
     //check NE corner
+    if (parseInt(id) === gridWidth -1) {
+        if(parseInt(currentId) === parseInt(id-1) 
+        || parseInt(currentId) === parseInt(id) + gridWidth  -1
+        || parseInt(currentId) === parseInt(id) + gridWidth) {
+            isNewSquareAccessible = true;
+        }
+    }
     //check SW corner
+    if (parseInt(id) === (gridWidth * gridWidth) - gridWidth) {
+        if(parseInt(currentId) === parseInt(id+1) 
+        || parseInt(currentId) === parseInt(id) - gridWidth
+        || parseInt(currentId) === parseInt(id) - gridWidth +1) {
+            isNewSquareAccessible = true;
+        }
+    }
     //check SE corner
+    if (parseInt(id) === (gridWidth * gridWidth) - 1) {
+        if(parseInt(currentId) === parseInt(id-1) 
+        || parseInt(currentId) === parseInt(id) - gridWidth
+        || parseInt(currentId) === parseInt(id) - gridWidth -1) {
+            isNewSquareAccessible = true;
+        }
+    }
 }
 
 function move(newSquare) {
@@ -104,6 +124,7 @@ function move(newSquare) {
         if (energy === 0) {
             alert("you'redead :(")
         }
+        isNewSquareAccessible = false;
     }
 
 
