@@ -54,36 +54,55 @@ function createParcel() {
 }
 
 function accessible(newSquare) {
+    id = newSquare.id;
+    let isNWCorner = parseInt(id) === 0;
+    let isNECorner = parseInt(id) === gridWidth - 1;
+    let isSWCorner = parseInt(id) === (gridWidth * gridWidth) - gridWidth;
+    let isSECorner = parseInt(id) === (gridWidth * gridWidth) - 1;
+    let isTopEdge = parseInt(id) < gridWidth - 1;
+    let isBottomEdge = (parseInt(id) < (gridWidth * gridWidth) - 1) && (parseInt(id) > (gridWidth * gridWidth) - gridWidth)
+
     //check NW corner
-    id = newSquare.id
-    if (parseInt(id) === 0) {
-        if(parseInt(currentId) === parseInt(id+1) 
-        || parseInt(currentId) ===  gridWidth 
-        || parseInt(currentId) === gridWidth +1) {
+    if (isNWCorner) {
+        if (parseInt(currentId) === (parseInt(id + 1) || gridWidth || gridWidth + 1)) {
             isNewSquareAccessible = true;
         }
     }
     //check NE corner
-    if (parseInt(id) === gridWidth -1) {
-        if(parseInt(currentId) === parseInt(id-1) 
-        || parseInt(currentId) === parseInt(id) + gridWidth  -1
-        || parseInt(currentId) === parseInt(id) + gridWidth) {
+    if (isNECorner) {
+        if (parseInt(currentId) === (parseInt(id - 1) || parseInt(id) + gridWidth - 1 || parseInt(id) + gridWidth)) {
             isNewSquareAccessible = true;
         }
     }
     //check SW corner
-    if (parseInt(id) === (gridWidth * gridWidth) - gridWidth) {
-        if(parseInt(currentId) === parseInt(id+1) 
-        || parseInt(currentId) === parseInt(id) - gridWidth
-        || parseInt(currentId) === parseInt(id) - gridWidth +1) {
+    if (isSWCorner) {
+        if (parseInt(currentId) === (parseInt(id + 1) || parseInt(id) - gridWidth || parseInt(id) - gridWidth + 1)) {
             isNewSquareAccessible = true;
         }
     }
     //check SE corner
-    if (parseInt(id) === (gridWidth * gridWidth) - 1) {
-        if(parseInt(currentId) === parseInt(id-1) 
-        || parseInt(currentId) === parseInt(id) - gridWidth
-        || parseInt(currentId) === parseInt(id) - gridWidth -1) {
+    if (isSECorner) {
+        if (parseInt(currentId) === (parseInt(id - 1) || parseInt(id) - gridWidth || parseInt(id) - gridWidth - 1)) {
+            isNewSquareAccessible = true;
+        }
+    }
+    //check N edge 
+    if (isTopEdge && !isNWCorner && !isNECorner) {
+        if (parseInt(currentId) === (parseInt(id) + gridWidth
+            || parseInt(id) + gridWidth - 1
+            || parseInt(id) + gridWidth + 1
+            || parseInt(id) + 1
+            || parseInt(id) - 1)) {
+            isNewSquareAccessible = true;
+        }
+    }
+    //check S edge
+    if (isBottomEdge && !isSWCorner && !isSECorner) {
+        if (parseInt(currentId) === (parseInt(id) - gridWidth
+            || parseInt(id) - gridWidth - 1
+            || parseInt(id) - gridWidth + 1
+            || parseInt(id) + 1
+            || parseInt(id) - 1)) {
             isNewSquareAccessible = true;
         }
     }
