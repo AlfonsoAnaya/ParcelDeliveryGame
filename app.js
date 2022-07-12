@@ -62,7 +62,7 @@ function accessible(newSquare) {
     let isTopEdge = parseInt(id) < gridWidth - 1;
     let isBottomEdge = (parseInt(id) < (gridWidth * gridWidth) - 1) && (parseInt(id) > (gridWidth * gridWidth) - gridWidth);
     let isLeftEdge = (parseInt(id) % gridWidth === 0);
-    let isRightEdge = ((sparseInt(id) +1) % gridWidth === 0);
+    let isRightEdge = ((parseInt(id) +1) % gridWidth === 0);
 
     //check NW corner
     if (isNWCorner) {
