@@ -9,11 +9,6 @@ let currentId = 0;
 let isNewSquareAccessible = false;
 
 
-/*for (let i=0; i<parcelNumber; i++) {
-    let randomSquare = Math.floor(Math.random() * buildingSquares.length);
-    randomSquares.push(buildingSquares[randomSquare])
-}*/
-
 //create board
 function createBoard() {
     const invalidArray = Array(invalidAmount).fill("square-empty");
@@ -62,7 +57,8 @@ function accessible(newSquare) {
     let isTopEdge = parseInt(id) < gridWidth - 1;
     let isBottomEdge = (parseInt(id) < (gridWidth * gridWidth) - 1) && (parseInt(id) > (gridWidth * gridWidth) - gridWidth);
     let isLeftEdge = (parseInt(id) % gridWidth === 0);
-    let isRightEdge = ((sparseInt(id) +1) % gridWidth === 0);
+    let isRightEdge = ((parseInt(id) + 1) % gridWidth === 0);
+    let isCentralSquare = (!isTopEdge && !isBottomEdge && !isLeftEdge && !isRightEdge);
 
     //check NW corner
     if (isNWCorner) {
@@ -133,6 +129,20 @@ function accessible(newSquare) {
             || parseInt(currentId) === (parseInt(id) - 1)
             || parseInt(currentId) === (parseInt(id) - gridWidth)
             || parseInt(currentId) === (parseInt(id) + gridWidth)) {
+            isNewSquareAccessible = true;
+        }
+    }
+    //check central Squares
+    if (isCentralSquare) {
+        console.log("central")
+        if (parseInt(currentId) === (parseInt(id) + 1)
+            || parseInt(currentId) === (parseInt(id) - 1)
+            || parseInt(currentId) === (parseInt(id) - gridWidth)
+            || parseInt(currentId) === (parseInt(id) - gridWidth - 1)
+            || parseInt(currentId) === (parseInt(id) - gridWidth + 1)
+            || parseInt(currentId) === (parseInt(id) + gridWidth)
+            || parseInt(currentId) === (parseInt(id) + gridWidth - 1)
+            || parseInt(currentId) === (parseInt(id) + gridWidth + 1)) {
             isNewSquareAccessible = true;
         }
     }
