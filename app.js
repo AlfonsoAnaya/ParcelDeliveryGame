@@ -28,8 +28,7 @@ function createBoard() {
     validSquares = squares.filter(s => s.classList.contains("square-valid"));
     currentSquare = validSquares[Math.floor(Math.random() * validSquares.length)]
     currentSquare.classList.add("current");
-    currentId = currentSquare.id
-    console.log(`current id is ${currentId}`)
+    currentId = currentSquare.id;
 
     //create parcels
     for (let i = 0; i < initialparcelNumber; i++) {
@@ -58,7 +57,7 @@ function accessible(newSquare) {
     let isBottomEdge = (parseInt(id) < (gridWidth * gridWidth) - 1) && (parseInt(id) > (gridWidth * gridWidth) - gridWidth);
     let isLeftEdge = (parseInt(id) % gridWidth === 0);
     let isRightEdge = ((parseInt(id) + 1) % gridWidth === 0);
-    let isCentralSquare = (!isTopEdge && !isBottomEdge && !isLeftEdge && !isRightEdge);
+    let isCentralSquare = (!(isTopEdge) && !(isBottomEdge) && !(isLeftEdge) && !(isRightEdge));
 
     //check NW corner
     if (isNWCorner) {
@@ -134,7 +133,6 @@ function accessible(newSquare) {
     }
     //check central Squares
     if (isCentralSquare) {
-        console.log("central")
         if (parseInt(currentId) === (parseInt(id) + 1)
             || parseInt(currentId) === (parseInt(id) - 1)
             || parseInt(currentId) === (parseInt(id) - gridWidth)
@@ -156,7 +154,6 @@ function move(newSquare) {
         currentSquare.classList.remove("current");
         newSquare.classList.add("current");
         currentId = newSquare.id;
-        console.log(`current id is ${currentId}`)
         //if new position contains a parcel
         if (newSquare.classList.contains("parcel")) {
             energy++;
