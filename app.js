@@ -176,14 +176,18 @@ function move(newSquare) {
         energy = energy.slice(0, -1);
         energyDisplay.innerText = energy;
         console.log(energy)
-        if (energy.length < 2) {
-            createParcel();
-        } else if (Math.random() > .8) {
-            createParcel();
+        console.log(document.querySelectorAll("destination"))
+        if (document.querySelectorAll("destination").length < 5) {
+            if (energy.length < 2) {
+                createParcel();
+            } else if (Math.random() > .8) {
+                createParcel();
+            }
+            if (energy.length === 0) {
+                alert("you're dead :(")
+            }
         }
-        if (energy.length === 0) {
-            alert("you'redead :(")
-        }
+
         isNewSquareAccessible = false;
     }
 
