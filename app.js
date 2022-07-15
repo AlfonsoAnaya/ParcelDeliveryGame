@@ -1,13 +1,14 @@
 let gridWidth = 5;
 let initialparcelNumber = 3;
 let invalidAmount = 4;
-let energy = 3;
+let energy = "⚡⚡⚡";
 let gridContainer = document.getElementById("grid-container");
 let squares = [];
 let validSquares = [];
 let currentId = 0;
 let isNewSquareAccessible = false;
-
+let energyDisplay = document.getElementById("energy");
+energyDisplay.innerText = energy;
 
 //create board
 function createBoard() {
@@ -156,7 +157,8 @@ function move(newSquare) {
         currentId = newSquare.id;
         //if new position contains a parcel
         if (newSquare.classList.contains("parcel")) {
-            energy++;
+            energy = energy + "⚡";
+            energyDisplay.innerText = energy;
             newSquare.classList.remove("parcel");
             let validDestinationSquares = squares.filter(s => s.classList.contains("square-valid"))
                 .filter(s => !s.classList.contains("current"))
@@ -166,18 +168,20 @@ function move(newSquare) {
         }
         // if new position is a destination
         if (newSquare.classList.contains("destination")) {
-            energy = energy + 2;
+            energy = energy + "⚡⚡";
+            energyDisplay.innerText = energy;
             newSquare.classList.remove("destination")
         }
         //consume energy and, with a probability of .5, create a new parcel
-        energy--;
+        energy = energy.slice(0, -1);
+        energyDisplay.innerText = energy;
         console.log(energy)
-        if (energy < 2) {
+        if (energy.length < 2) {
             createParcel();
         } else if (Math.random() > .8) {
             createParcel();
         }
-        if (energy === 0) {
+        if (energy.length === 0) {
             alert("you'redead :(")
         }
         isNewSquareAccessible = false;
