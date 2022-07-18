@@ -46,6 +46,7 @@ function createParcel() {
         .filter(s => !s.classList.contains("parcel"));
     const randomNumParcel = Math.floor(Math.random() * validParcelSquares.length);
     validParcelSquares[randomNumParcel].classList.add("parcel");
+    validParcelSquares[randomNumParcel].innerText = "📦"
 }
 
 function accessible(newSquare) {
@@ -160,6 +161,7 @@ function move(newSquare) {
             energy = energy + "⚡";
             energyDisplay.innerText = energy;
             newSquare.classList.remove("parcel");
+            newSquare.textContent = "";
             let validDestinationSquares = squares.filter(s => s.classList.contains("square-valid"))
                 .filter(s => !s.classList.contains("current"))
                 .filter(s => !s.classList.contains("destination"));

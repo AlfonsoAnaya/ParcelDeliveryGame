@@ -35,16 +35,16 @@ header {
   height: 100px;
   background: rgb(210, 192, 181);
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
 }
 #grid-container .square-empty {
   width: 100px;
   height: 100px;
   background: gray;
   box-sizing: border-box;
-}
-#grid-container .parcel {
-  background: rgb(215, 111, 60);
-  border: solid 25px rgb(210, 192, 181);
 }
 #grid-container .destination {
   border: solid 25px coral;

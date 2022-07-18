@@ -41,16 +41,17 @@ header {
         height: 100px;
         background: $color-valid;
         box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        
     }
     .square-empty {
         width: 100px;
         height: 100px;
         background: $color-empty;
         box-sizing: border-box;
-    }
-    .parcel {
-        background: rgb(215, 111, 60);
-        border: solid 25px $color-valid;
     }
     .destination {
         border: solid 25px coral;
