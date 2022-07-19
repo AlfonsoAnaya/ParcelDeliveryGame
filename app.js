@@ -155,7 +155,9 @@ function move(newSquare) {
     accessible(newSquare)
     if (isNewSquareAccessible) {
         currentSquare.classList.remove("current");
+        currentSquare.textContent = ""
         newSquare.classList.add("current");
+        newSquare.textContent = "🚶‍♂️"
         currentId = newSquare.id;
         //if new position contains a parcel
         if (newSquare.classList.contains("parcel")) {
