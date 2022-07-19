@@ -30,6 +30,7 @@ function createBoard() {
     currentSquare = validSquares[Math.floor(Math.random() * validSquares.length)]
     currentSquare.classList.add("current");
     currentId = currentSquare.id;
+    currentSquare.textContent = "🚶‍♂️"
 
     //create parcels
     for (let i = 0; i < initialparcelNumber; i++) {
