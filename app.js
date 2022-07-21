@@ -164,7 +164,7 @@ function move(newSquare) {
             energy = energy + "⚡";
             energyDisplay.innerText = energy;
             newSquare.classList.remove("parcel");
-            newSquare.textContent = "";
+            newSquare.textContent = "🚶‍♂️";
             let validDestinationSquares = squares.filter(s => s.classList.contains("square-valid"))
                 .filter(s => !s.classList.contains("current"))
                 .filter(s => !s.classList.contains("destination"));
@@ -181,8 +181,8 @@ function move(newSquare) {
         energy = energy.slice(0, -1);
         energyDisplay.innerText = energy;
         console.log(energy)
-        console.log(document.querySelectorAll("destination"))
-        if (document.querySelectorAll("destination").length < 5) {
+        console.log(document.querySelectorAll(".destination"))
+        if (document.querySelectorAll(".destination").length < 5) {
             if (energy.length < 2) {
                 createParcel();
             } else if (Math.random() > .8) {
