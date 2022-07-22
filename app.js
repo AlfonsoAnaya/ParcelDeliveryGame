@@ -192,11 +192,14 @@ function move(newSquare) {
                 alert("you're dead :(")
             }
         }
-
         isNewSquareAccessible = false;
     }
+}
 
-
+//display danger
+if (energy.length < 3) {
+    console.log("energy low")
+    gridContainer.classList.add("danger");
 }
 
 

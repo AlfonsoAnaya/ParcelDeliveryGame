@@ -48,4 +48,8 @@ header {
 }
 #grid-container .destination {
   border: solid 25px coral;
+}
+
+.danger {
+  background: orange;
 }/*# sourceMappingURL=style.css.map */
