@@ -20,7 +20,7 @@ header {
 }
 
 #grid-container {
-  width: 512px;
+  width: 408px;
   padding: 1em;
   display: flex;
   flex-wrap: wrap;

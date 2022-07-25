@@ -1,4 +1,4 @@
-let gridWidth = 5;
+let gridWidth = 4;
 let initialparcelNumber = 3;
 let invalidAmount = 4;
 let energy = "⚡⚡⚡";
@@ -196,7 +196,7 @@ function move(newSquare) {
         if (energy.length === 0) {
             alert("you're dead :(")
         }
-        if (document.querySelectorAll(".destination").length < 5) {
+        if (document.querySelectorAll(".destination").length < gridWidth) {
             if (energy.length < 2) {
                 createParcel();
             } else if (Math.random() > .8) {
