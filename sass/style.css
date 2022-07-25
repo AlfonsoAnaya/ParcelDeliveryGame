@@ -22,7 +22,6 @@ header {
 #grid-container {
   width: 512px;
   padding: 1em;
-  background: rgb(222, 234, 238);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,6 +49,14 @@ header {
   border: solid 25px coral;
 }
 
+.no-danger {
+  background: rgb(222, 234, 238);
+}
+
 .danger {
   background: orange;
+}
+
+.extra-danger {
+  background: red;
 }/*# sourceMappingURL=style.css.map */

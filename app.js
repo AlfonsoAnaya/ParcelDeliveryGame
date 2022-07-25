@@ -180,8 +180,15 @@ function move(newSquare) {
         //consume energy and, with a probability of .5, create a new parcel
         energy = energy.slice(0, -1);
         energyDisplay.innerText = energy;
-        console.log(energy)
-        console.log(document.querySelectorAll(".destination"))
+        //display danger
+        if (energy.length < 3) {
+            console.log("energy low")
+            gridContainer.classList.add("danger");
+        }
+        if (energy.length < 2) {
+            console.log("energy low")
+            gridContainer.classList.add("extra-danger");
+        }
         if (document.querySelectorAll(".destination").length < 5) {
             if (energy.length < 2) {
                 createParcel();
@@ -195,13 +202,5 @@ function move(newSquare) {
         isNewSquareAccessible = false;
     }
 }
-
-//display danger
-if (energy.length < 3) {
-    console.log("energy low")
-    gridContainer.classList.add("danger");
-}
-
-
 
 createBoard()

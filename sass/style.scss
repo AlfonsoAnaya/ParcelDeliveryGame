@@ -29,7 +29,6 @@ header {
 #grid-container {
     width: 512px;
     padding: 1em;
-    background: $color-primary;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -58,7 +57,13 @@ header {
     }
 }
 
+.no-danger {
+    background: $color-primary;
+}
 .danger {
     background: orange;
+}
+.extra-danger {
+    background: red;
 }
 
