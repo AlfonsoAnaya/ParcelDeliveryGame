@@ -182,21 +182,25 @@ function move(newSquare) {
         energyDisplay.innerText = energy;
         //display danger
         if (energy.length < 3) {
-            console.log("energy low")
             gridContainer.classList.add("danger");
         }
         if (energy.length < 2) {
-            console.log("energy low")
             gridContainer.classList.add("extra-danger");
+        }
+        if (energy.length >= 3) {
+            gridContainer.classList.remove("danger");
+        }
+        if (energy.length >= 2) {
+            gridContainer.classList.remove("extra-danger");
+        }
+        if (energy.length === 0) {
+            alert("you're dead :(")
         }
         if (document.querySelectorAll(".destination").length < 5) {
             if (energy.length < 2) {
                 createParcel();
             } else if (Math.random() > .8) {
                 createParcel();
-            }
-            if (energy.length === 0) {
-                alert("you're dead :(")
             }
         }
         isNewSquareAccessible = false;

@@ -54,9 +54,9 @@ header {
 }
 
 .danger {
-  background: orange;
+  background: rgb(208, 174, 110);
 }
 
 .extra-danger {
-  background: red;
+  background: rgb(218, 133, 133);
 }/*# sourceMappingURL=style.css.map */
