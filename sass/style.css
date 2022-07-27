@@ -59,4 +59,29 @@ header {
 
 .extra-danger {
   background: rgb(218, 133, 133);
+}
+
+footer {
+  font-family: var(--font-secondary);
+  font-size: 0.9em;
+  color: var(--color-white);
+  text-align: center;
+  height: 3em;
+  background-color: rgba(77, 175, 240, 0.7333333333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer footer a {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  color: var(--color-white);
+  cursor: pointer;
+}
+footer footer a:hover {
+  -webkit-text-decoration: underline solid;
+          text-decoration: underline solid;
+  color: var(--color-white);
+  cursor: pointer;
+  color: rgb(0, 118, 227);
 }/*# sourceMappingURL=style.css.map */
