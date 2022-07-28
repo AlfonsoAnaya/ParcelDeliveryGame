@@ -1,3 +1,13 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 12% 12% 1fr 6%;
+  grid-template-columns: 100%;
+  align-items: center;
+  justify-items: stretch;
+}
+
 body * {
   margin: 0 auto;
   text-align: center;
@@ -10,9 +20,8 @@ header {
 }
 
 .scoreboard {
-  margin-bottom: 2em;
   display: flex;
-  max-width: 400px;
+  min-width: 400px;
 }
 
 .scoreboard span {
@@ -62,6 +71,7 @@ header {
 }
 
 footer {
+  width: 100%;
   font-family: var(--font-secondary);
   font-size: 0.9em;
   color: var(--color-white);
