@@ -65,11 +65,11 @@ header {
 }
 
 .danger {
-  background: rgb(208, 174, 110);
+  background: rgb(220, 189, 131);
 }
 
 .extra-danger {
-  background: rgb(218, 133, 133);
+  background: rgb(224, 159, 159);
 }
 
 footer {
